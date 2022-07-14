@@ -1,0 +1,55 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'Sample SAM Template for postcodesvc
+
+  '
+Globals:
+  Function:
+    Timeout: 10
+Resources:
+  PostCodeSvcFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: s3://postcodesvcbuildatrifacts/0e3e2894d7560aca651d6318182e85c9
+      Handler: PostCodeSvc::PostCodeSvc.Function::FunctionHandler
+      Runtime: dotnetcore3.1
+      Architectures:
+      - x86_64
+      MemorySize: 256
+      Environment:
+        Variables:
+          PARAM1: VALUE
+      Events:
+        Lookup:
+          Type: Api
+          Properties:
+            Path: /lookup
+            Method: get
+            RequestParameters:
+            - method.request.querystring.postcode
+        Autocomplete:
+          Type: Api
+          Properties:
+            Path: /autocomplete
+            Method: get
+            RequestParameters:
+            - method.request.querystring.postcode
+    Metadata:
+      SamResourceId: PostCodeSvcFunction
+Outputs:
+  PostCodeSvcApi:
+    Description: API Gateway endpoint URL for Prod stage for Hello World function
+    Value:
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/lookup?postcode=NE30%201DP
+  PostCodeSvcFunction:
+    Description: Hello World Lambda Function ARN
+    Value:
+      Fn::GetAtt:
+      - PostCodeSvcFunction
+      - Arn
+  PostCodeSvcFunctionIamRole:
+    Description: Implicit IAM Role created for Hello World function
+    Value:
+      Fn::GetAtt:
+      - PostCodeSvcFunctionRole
+      - Arn
