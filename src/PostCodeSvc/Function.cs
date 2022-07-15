@@ -47,7 +47,7 @@ namespace PostCodeSvc
             {
                 Body = JsonSerializer.Serialize(results),
                 StatusCode = body.Count > 0 ? 200 : 404,
-                Headers = new Dictionary<string, string> { { "Content-Type", "application/json" } }
+                Headers = new Dictionary<string, string> { { "Content-Type", "application/json" },{"Access-Control-Allow-Origin", "*" } }
             };
         }   
     }

@@ -17,6 +17,7 @@ public class PostCode {
 
         [JsonPropertyName("area")]        
         public string Area { get {
+            System.Console.WriteLine(" Latitude value : " + this.Latitude);
             if(this.Latitude < 52.229466)
                 return "South";
             else if(52.229466 <= this.Latitude && this.Latitude < 53.27169)
@@ -32,7 +33,7 @@ public class PostCode {
         [JsonPropertyName("codes")]
         public Code Codes{get;set;}
         [JsonPropertyName("latitude")]
-        internal double Latitude { get; set; }
+        public double Latitude { get; set; }
     }
 public class PostCodeModel {
         [JsonPropertyName("postcode")]
