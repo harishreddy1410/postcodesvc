@@ -1,0 +1,7 @@
+{"scripts": {
+    "start": "sam local start-api",
+    "build": "sam build",
+
+    "deploy": "npm run build && sam package --template-file template.yaml --output-template-file package.yml --s3-bucket aws-sam-cli-managed-default-samclisourcebucket-2647npur4ct5 --profile developertwo && sam deploy --profile developertwo"
+  }
+}
