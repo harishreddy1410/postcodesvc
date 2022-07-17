@@ -12,9 +12,9 @@ Globals:
       AllowHeaders: "'*'"
       AllowOrigin: "'*'"
     # Auth:
-    #   DefaultAuthorizer: MyLambdaTokenAuthorizer
+    #   DefaultAuthorizer: LambdaTokenAuthorizer
     #   Authorizers:
-    #     MyLambdaTokenAuthorizer:
+    #     LambdaTokenAuthorizer:
     #       FunctionArn: !GetAtt ApiAuthFunction.Arn
       
 Resources:
