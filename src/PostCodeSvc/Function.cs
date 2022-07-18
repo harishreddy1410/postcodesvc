@@ -59,7 +59,7 @@ namespace PostCodeSvc
             {
                 Body = JsonSerializer.Serialize(body),
                 StatusCode = body.Count > 0 ? 200 : 404,
-                Headers = new Dictionary<string, string> { 
+                 Headers = new Dictionary<string, string> { 
                     { "Content-Type", "application/json" },
                     {"Access-Control-Allow-Origin", "*" },
                     {"Access-Control-Allow-Headers", "*" } ,
@@ -81,14 +81,6 @@ namespace PostCodeSvc
 
             IMapper mapper = mapperConfig.CreateMapper();
             _serviceCollection.AddSingleton(mapper);
-        }
-        public class MappingProfile : Profile
-        {
-            public MappingProfile()
-            {
-                // Add as many of these lines as you need to map your objects
-                CreateMap<PostCode, PostCodeDto>();
-            }
         }
         #endregion
 

@@ -15,13 +15,13 @@ public class PostCodeService
     /// </summary>
     /// <param name="postCode"></param>
     /// <returns></returns>
-    public async Task<PostCode> Lookup(string postCode)
+    public async Task<PostCodeDetail> Lookup(string postCode)
     {
         string url = AppSettings.PostCodeApiUrl + postCode;        
         var result = await client.SendAsync(new HttpRequestMessage(HttpMethod.Get, url));
         var jsonData = JsonSerializer.Deserialize<Dictionary<string, object>>
         (await result.Content.ReadAsStringAsync());
-        return jsonData.ContainsKey("result") ? JsonSerializer.Deserialize<PostCode>(jsonData["result"].ToString()) : new PostCode();   
+        return jsonData.ContainsKey("result") ? JsonSerializer.Deserialize<PostCodeDetail>(jsonData["result"].ToString()) : new PostCodeDetail();   
     }
 
     /// <summary>
@@ -29,12 +29,12 @@ public class PostCodeService
     /// </summary>
     /// <param name="postCode"></param>
     /// <returns></returns>
-    public async Task<List<PostCode>> AutoComplete(string postCode)
+    public async Task<List<PostCodeDetail>> AutoComplete(string postCode)
     {
         string url = AppSettings.PostCodeApiUrl + postCode + AppSettings.PostCodeApiAutoCompletePath;        
         var result = await client.SendAsync(new HttpRequestMessage(HttpMethod.Get, url));
         var jsonData = JsonSerializer.Deserialize<Dictionary<string, object>>(await result.Content.ReadAsStringAsync());
-        List<PostCode> searchResult = new List<PostCode>();
+        List<PostCodeDetail> searchResult = new List<PostCodeDetail>();
         if(jsonData["result"] != null)
         {
             //Make bulk lookup

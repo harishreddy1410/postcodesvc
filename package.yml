@@ -15,7 +15,7 @@ Resources:
   PostCodeSvcFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: s3://aws-sam-cli-managed-default-samclisourcebucket-2647npur4ct5/c6847b4d0ee6c712798ef6d68dd50580
+      CodeUri: s3://aws-sam-cli-managed-default-samclisourcebucket-2647npur4ct5/a0e13c8b186822931845b388f8d14911
       Handler: PostCodeSvc::PostCodeSvc.Function::FunctionHandler
       Runtime: dotnetcore3.1
       Architectures:
