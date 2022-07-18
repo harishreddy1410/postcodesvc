@@ -16,6 +16,7 @@ URL:
  * #### build using - `npm run build`
  * #### start in local using - `npm run start`
  * #### deploy using - `npm run deploy`
+ * #### Unit test running - `cd .\src\PostCodeSvc.Tests\' followed by `dotnet test`
 
 ### Steps Involved
 1) Create the application using the SAM pre built templates, In my case AWS Toolkit in VSCode had some issues while creating the application and hence I have used the below command 
