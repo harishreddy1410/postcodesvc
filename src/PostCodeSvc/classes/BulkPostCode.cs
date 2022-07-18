@@ -1,5 +1,8 @@
 using System.Text.Json.Serialization;
 
+/// <summary>
+/// Class to map the response of postcodes.io bulk api 
+/// </summary>
 public class BulkPostCode
 {
     [JsonPropertyName("query")]
