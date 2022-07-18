@@ -7,10 +7,15 @@ URL:
 ### Pre requisites  
 * AWS Account - free trial is enough
 * Docker installed in machine to test locally and running state 
-* AWS cli and Sam cli installation
+* AWS cli and Sam cli installed
 * IDE : VSCode 
-* Dotnet core 3.1 sdk 
+* Dotnet core 3.1 sdk installed 
+* nodejs package installed
 * Optional : Postman for testing API's
+### Commands to build, run and deploy
+ * #### build using - `npm run build`
+ * #### start in local using - `npm run start`
+ * #### deploy using - `npm run deploy`
 
 ### Steps Involved
 1) Create the application using the SAM pre built templates, In my case AWS Toolkit in VSCode had some issues while creating the application and hence I have used the below command 
