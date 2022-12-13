@@ -1,5 +1,6 @@
 ### About
-This application is AWS Lambda API for lookup and auto complete the UK's post codes. its built using AWS CloudFormation and AWS Serverless application model(SAM)  
+Search post codes - 
+This application is AWS Lambda API for lookup and auto complete the UK's post codes search. its built using AWS CloudFormation and AWS Serverless application model(SAM)  
 URL: 
 * https://rpzxxc61d0.execute-api.us-east-1.amazonaws.com/Prod/lookup?postcode=NE301DP
 * https://rpzxxc61d0.execute-api.us-east-1.amazonaws.com/Prod/autocomplete?postcode=NE3
